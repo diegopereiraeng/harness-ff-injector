@@ -1,5 +1,7 @@
 # harness-ff-injector
 
+![Extension](https://github.com/diegopereiraeng/harness-ff-injector/blob/main/icons/ff-extension-sc.jpeg?raw=true)
+
 Please git clone the project.
 
 Go to Chrome Extensions chrome://extensions/
