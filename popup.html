@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Harness Demo Tool</title>
+    <script src="js/popup.js"></script>
+    <script type="text/javascript" src="/jquery.min.js"></script>
+    
+  </head>
+  <body style="width:300px;">
+    <img src="icons/ff.svg" />
+    <span style="font-weight:bold; font-size: large;">Harness Demo</span>
+    <hr/>
+    <h3>Demo Options</h3>
+    <input type="checkbox" id="enabled" checked /> Extension Enabled<br>
+    <table>
+      <tr><td colspan="2"><hr /></td></tr>
+      <tr><td>Target Identifier:</td><td><input type="text" id="userKey" /></td></tr>
+      <tr><td>Flag Identifier:</td><td><input type="text" id="flagKey" /></td></tr>
+      <tr><td>Client-Side Token:</td><td><input type="text" id="id" /></td></tr>
+      <tr><td colspan="2"><hr /></td></tr>
+    </table>
+    <table>
+      <tr><td>Custom Javascript Code:</td><td></td></tr>
+      <tr><td>
+        <textarea rows = "4" cols = "30" id="customCode" name = "code">console.log("Diego");
+function login_version(text) {
+    alert("flag values is "+text);
+    if (text == "v3") {
+        $(".open-account").attr("style","display: visibility;");
+        alert("Version Enabled: "+text);
+    } 
+    else {
+        $(".open-account").attr("style","display: none;");
+}
+};
+return login_version</textarea>
+      </td><td></td></tr>
+    </table>
+    <hr/>
+    <button id="save">Save</button>
+  </body>
+</html>

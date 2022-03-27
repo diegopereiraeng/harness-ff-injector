@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+  
+    "name": "Harness Demo Tool",
+    "description": "This extension creates custom demo flows for Harness",
+    "version": "0.9",
+    "permissions": ["storage", "activeTab"],
+    "content_security_policy": "script-src 'self' https://app.harness.io; object-src 'self'",
+    "background": {
+        "page": "bg.html",
+        "persistent": true
+    },
+    "icons": {
+        "16": "icons/favicon.ico",
+        "64": "icons/favicon.ico",
+        "128": "icons/favicon.ico"
+      },
+     "web_accessible_resources": [
+          "*"
+    ],
+    "content_scripts": [{
+     "run_at": "document_end",
+     "js": ["jquery-3.4.1.min.js","content-script.js"],
+     "matches": ["http://*/*", "https://*/*"]
+    }],
+    "browser_action": {
+        "default_icon": "icons/ff.png",
+        "default_popup": "popup.html"
+    }
+  }
