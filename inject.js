@@ -123,6 +123,7 @@ function startSDK(){
                             }
                             
                         }
+                        // ADD HERE YOURS FLAGS LOGIC AND ACTION FOR Flags changes ex: www.itau.com.br
                         if (key == "login_enabled") {
                             if (value == true) {
                                 $(".login-form").attr("style","display: visibility;");
@@ -130,7 +131,20 @@ function startSDK(){
                                 $(".login-form").attr("style","display: none;");
                             }
                         }
-                        
+                        if (key == "cards_enabled") {
+                            if (value == true) {
+                                $(".icon-itaufonts_cartao").parent().parent().attr("style","display: visibility;");
+                            } else {
+                                $(".icon-itaufonts_cartao").parent().parent().attr("style","display: none;");
+                            }
+                        }
+                        if (key == "loans_enabled") {
+                            if (value == true) {
+                                $(".icon-itaufonts_credito_imobiliario").parent().parent().attr("style","display: visibility;");
+                            } else {
+                                $(".icon-itaufonts_credito_imobiliario").parent().parent().attr("style","display: none;");
+                            }
+                        }
                     }
                     catch(e){
                         console.log(e)
@@ -167,6 +181,7 @@ function startSDK(){
                     }
                     
                 }
+                // ADD HERE YOURS FLAGS LOGIC AND ACTION FOR Flags changes ex: www.itau.com.br
                 console.log("FF is Awesome");
                 if (flagInfo.flag == "login_enabled") {
                     if (flagInfo.value == true) {
@@ -175,6 +190,20 @@ function startSDK(){
                         $(".login-form").attr("style","display: none;");
                     }
                     
+                }
+                if (flagInfo.flag == "cards_enabled") {
+                    if (flagInfo.value == true) {
+                        $(".icon-itaufonts_cartao").parent().parent().attr("style","display: visibility;");
+                    } else {
+                        $(".icon-itaufonts_cartao").parent().parent().attr("style","display: none;");
+                    }
+                }
+                if (flagInfo.flag == "loans_enabled") {
+                    if (flagInfo.value == true) {
+                        $(".icon-itaufonts_credito_imobiliario").parent().parent().attr("style","display: visibility;");
+                    } else {
+                        $(".icon-itaufonts_credito_imobiliario").parent().parent().attr("style","display: none;");
+                    }
                 }
                 if (flagInfo.deleted) {
                   console.log('Flag'+flagInfo.flag+' is deleted');
